@@ -13,8 +13,11 @@ setup(
         f"dagster-gcp=={DAGSTER_LIBS_VERSION}",
         f"dagster-mlflow=={DAGSTER_LIBS_VERSION}",
         f"mlflow=={MLFLOW_VERSION}",
-        f"pendulum<3.0"
-#        f"tensorflow",
+        f"dagster-airbyte",
+        f"dagster-dbt==0.21.6",
+        f"pendulum<3.0",
+        f"dbt-postgres",
+
     ],
     extras_require={"dev": ["dagster-webserver", "pytest", "jupyter"], "tests": ["mypy", "pylint", "pytest"]},
 )
