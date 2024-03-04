@@ -39,7 +39,7 @@ class CustomDagsterDbtTranslator(DagsterDbtTranslator):
 
 
 dbt_manifest_path = "/home/cristobal/mlops_dbt/target/manifest.json"
-@dbt_assets(manifest=dbt_manifest_path,
-            dagster_dbt_translator=CustomDagsterDbtTranslator(),)
+@dbt_assets(manifest=dbt_manifest_path)
 def dbt_project_assets(context: AssetExecutionContext, dbt: DbtCliResource):
     yield from dbt.cli(["build"], context=context).stream()
+    
